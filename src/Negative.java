@@ -3,13 +3,11 @@ import processing.core.PApplet;
 public class Negative implements PixelFilter {
     @Override
     public DImage processImage(DImage img) {
-        short[][] Npixels = img.getBWPixelGrid();
+        short[] Npixels = img.getBWPixelArray();
 
-        for (int r = 0; r < Npixels.length; r++) {
-            for (int c = 0; c < Npixels[r].length; c++) {
-                short num = Npixels[r][c];
-                Npixels[r][c] = (short)(255-num);
-            }
+        for (int i = 0; i < Npixels.length; i++) {
+            short num = Npixels[i];
+            Npixels[i] = (short)(255-num);
         }
         img.setPixels(Npixels);
         return img;

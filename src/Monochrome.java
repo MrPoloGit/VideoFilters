@@ -14,9 +14,6 @@ public class Monochrome implements PixelFilter{
     public DImage processImage(DImage img) {
         short[][] Mpixels = img.getBWPixelGrid();
 
-
-
-
         for (int r = 0; r < Mpixels.length; r++) {
             for (int c = 0; c < Mpixels[r].length; c++) {
                 int tmp = Mpixels[r][c];
