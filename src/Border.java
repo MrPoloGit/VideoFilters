@@ -5,7 +5,7 @@ import javax.swing.*;
 public class Border implements PixelFilter {
     int w;
 
-    public Lighten(){
+    public Border(){
         String num = JOptionPane.showInputDialog("Choose a width of lightness");
         w = Integer.parseInt(num);
     }
