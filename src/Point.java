@@ -1,35 +1,33 @@
 public class Point {
-    private int red;
-    private int green;
-    private int blue;
+    int x;
+    int y;
 
-    public Point(int red, int green, int blue) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
-    public int getRed() {
-        return red;
+    public int getX() {
+        return x;
     }
 
-    public void setRed(int red) {
-        this.red = red;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public int getGreen() {
-        return green;
+    public int getY() {
+        return y;
     }
 
-    public void setGreen(int green) {
-        this.green = green;
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public int getBlue() {
-        return blue;
-    }
-
-    public void setBlue(int blue) {
-        this.blue = blue;
+    public void takerandomStep(){
+        int rand = (int)(Math.random()*4);
+        if(rand == 0) x+=3;
+        if(rand == 1) x-=3;
+        if(rand == 2) y+=3;
+        if(rand == 3) y-=3;
     }
 }

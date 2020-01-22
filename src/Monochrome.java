@@ -1,5 +1,4 @@
 import processing.core.PApplet;
-
 import javax.swing.*;
 
 public class Monochrome implements PixelFilter{

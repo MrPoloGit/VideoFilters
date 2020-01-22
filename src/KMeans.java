@@ -51,13 +51,13 @@ public class KMeans implements PixelFilter {
         int mini = 0;
         double mindist = 255*255*255;
 
-        for (int i = 0; i < clusters.size(); i++) {
-            double dist = clusters.get(i).distance(r,g,b);
-            if(dist < mindist) {
-                mindist = dist;
-                mini = i;
-            }
-        }
+//        for (int i = 0; i < clusters.size(); i++) {
+//            double dist = clusters.get(i).distance(r,g,b);
+//            if(dist < mindist) {
+//                mindist = dist;
+//                mini = i;
+//            }
+//        }
 
         clusters.get(mini).add(r,g,b);
     }
@@ -68,7 +68,7 @@ public class KMeans implements PixelFilter {
                 int re = red[r][c];
                 int gr = green[r][c];
                 int bl = blue[r][c];
-                Point cen = findCenter(re,gr,bl);
+                RGB cen = findCenter(re,gr,bl);
                 red[r][c] = (short)(cen.getRed());
                 green[r][c] = (short)(cen.getGreen());
                 blue[r][c] = (short)(cen.getBlue());
@@ -76,7 +76,7 @@ public class KMeans implements PixelFilter {
         }
     }
 
-    private Point findCenter(int r, int g, int b){
+    private RGB findCenter(int r, int g, int b){
         int minc = 0;
         double mindist = 255*255*255;
 
@@ -90,7 +90,7 @@ public class KMeans implements PixelFilter {
         int cr = clusters.get(minc).getCenter().getRed();
         int cg = clusters.get(minc).getCenter().getGreen();
         int cb = clusters.get(minc).getCenter().getBlue();
-        Point p = new Point(cr,cg,cb);
+        RGB p = new RGB(cr,cg,cb);
         return p;
     }
 
@@ -107,7 +107,7 @@ public class KMeans implements PixelFilter {
         return clusters;
     }
 
-    public int calcDistance(int red, int green, int blue, Point center){
+    public int calcDistance(int red, int green, int blue, RGB center){
         int dr = red - center.getRed();
         int dg = green - center.getGreen();
         int db = blue - center.getBlue();

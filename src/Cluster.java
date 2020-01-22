@@ -1,25 +1,25 @@
 import java.util.ArrayList;
 
 public class Cluster {
-    private Point center;
-    ArrayList<Point> points;
+    private RGB center;
+    ArrayList<RGB> points;
 
     public Cluster(int red, int green, int blue){
-        this.center = new Point(red, green, blue);
+        this.center = new RGB(red, green, blue);
         points = new ArrayList<>();
     }
 
     public void add(int red, int green ,int blue){
-        Point p = new Point(red, green, blue);
+        RGB p = new RGB(red, green, blue);
         points.add(p);
     }
 
-    public Point getCenter(){
+    public RGB getCenter(){
         return center;
     }
 
     public void setCenter(int r, int g, int b){
-        Point c = new Point(r, g, b);
+        RGB c = new RGB(r, g, b);
         center = c;
     }
 

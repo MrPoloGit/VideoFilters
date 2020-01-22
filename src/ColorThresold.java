@@ -4,8 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ColorThresold implements PixelFilter, Clickable {
-    private ArrayList<Point> targetValues;
-    private ArrayList<Double> ratioList;
+    private ArrayList<RGB> targetValues;
     private int thDiff = 20;
 
 
@@ -36,7 +35,7 @@ public class ColorThresold implements PixelFilter, Clickable {
     }
 
     public boolean compareVals(int r, int g, int b){
-        for (Point p: targetValues) {
+        for (RGB p: targetValues) {
             if(Math.abs(p.getRed()-r) < 20 && Math.abs(p.getGreen()-g) < 20 && Math.abs(p.getBlue()-b) < 20){
                 return true;
             }
@@ -55,7 +54,7 @@ public class ColorThresold implements PixelFilter, Clickable {
         short[][] green = img.getGreenChannel();
         short[][] blue = img.getBlueChannel();
 
-        Point p = new Point(red[mouseY][mouseX], green[mouseY][mouseX], blue[mouseY][mouseX]);
+        RGB p = new RGB(red[mouseY][mouseX], green[mouseY][mouseX], blue[mouseY][mouseX]);
         targetValues.add(p);
     }
 
