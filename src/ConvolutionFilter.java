@@ -1,4 +1,3 @@
-import javafx.scene.effect.GaussianBlur;
 import processing.core.PApplet;
 
 import javax.swing.*;

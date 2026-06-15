@@ -1,7 +1,6 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-import java.awt.*;
 import java.util.Arrays;
 
 public class DImage {
